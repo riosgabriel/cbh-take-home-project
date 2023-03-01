@@ -9,3 +9,5 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+The original implementation should not handle Falsy values differently, as in the test example where a boolean input `true` generates a different value than a boolean input `false`. Despite this, I decided not to change the code's behavior, since the challenge is refactoring and not changing its contract.
+I also used the `it.test` functionality to facilitate the addition of new test cases.
