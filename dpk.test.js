@@ -11,6 +11,10 @@ describe("deterministicPartitionKey", () => {
 
   test.each([
     { expected: "0"},
+    { event: null, expected: "0"},
+    { event: undefined, expected: "0"},
+    { event: [], expected: "888b858b73d5d34fedab0f07663436931a95c73d6d7808edc868767bb9172f9e542fb7bb1ad1dbe988ceff0aaffde2012bc0e7d1914e986269f46d93651436a5"},
+    { event: {}, expected: "c1802e6b9670927ebfddb7f67b3824642237361f07db35526c42c555ffd2dbe74156c366e1550ef8c0508a6cc796409a7194a59bba4d300a6182b483d315a862"},
     { event: { partitionKey: "foo" }, expected: "foo"},
     { event: { partitionKey: 1}, expected: "1"},
     { event: { partitionKey: {} }, expected: "{}"},
